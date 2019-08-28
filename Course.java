@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-
 public class Course {
 
     private String courseName;
@@ -25,45 +24,16 @@ public class Course {
         course1.add(new Course("Data Science 101", 10, "Brian Rockefeller"));
         course1.add(new Course("Machine Learning: An Introduction", 25, "AN Other"));
         course1.add(new Course("Outro to Programming", 1000, "Sebastian De Klerk"));
-        
-        // Course temp1 = new Course("",0,"");
-        // temp1.setCourseName("Intro to Programming");
-        // temp1.setNumberOfStudents(4);
-        // temp1.setCourseLecturer("John Smith");
-        // course1.add(temp1);
-        
-        // Course temp2 = new Course("",0,"");
-        // temp2.setCourseName("Intro to Software Development");
-        // temp2.setNumberOfStudents(1000);
-        // temp2.setCourseLecturer("Johan Smit");
-        // course1.add(temp2);
 
-        // Course temp3 = new Course("",0,"");
-        // temp3.setCourseName("Data Science 101");
-        // temp3.setNumberOfStudents(10);
-        // temp3.setCourseLecturer("Brian Rockefeller");
-        // course1.add(temp3);
-
-        // Course temp4 = new Course("",0,"");
-        // temp4.setCourseName("Machine Learning: An Introduction");
-        // temp4.setNumberOfStudents(25);
-        // temp4.setCourseLecturer("AN Other");
-        // course1.add(temp4);
-
-        // Course temp5 = new Course("",0,"");
-        // temp5.setCourseName("Outro to Programming");
-        // temp5.setNumberOfStudents(1000);
-        // temp5.setCourseLecturer("Sebastian De Klerk");
-        // course1.add(temp5);
-        
         // Sort list according to number of students
         Collections.sort(course1, new NumberOfStudentsComparator());
-        
+        //Print results
         System.out.println("Sort the list in ascending order according to number of students....\n");
         for (int iterator = 0; iterator < course1.size(); iterator++) {
             System.out.println(course1.get(iterator));
         }
         System.out.println("\n");
+
 
         // Swap items 1 and 2
         Collections.swap(course1,1,2);
@@ -73,8 +43,10 @@ public class Course {
         }
         System.out.println("\n");
 
+        //Create new course object
         List<Course> courses2 = new ArrayList<Course>();
         
+        //Populate 2nd Array list using addAll method1
         Collections.addAll(courses2, course1.get(0),course1.get(1),course1.get(2),course1.get(3),course1.get(4));
         System.out.println("Populate 2nd Array list using addAll method\n");
         for (int iterator = 0; iterator < courses2.size(); iterator++) {
@@ -82,6 +54,7 @@ public class Course {
         }
         System.out.println("\n");
        
+        //Populate 2nd Array list using copy method [This will overwrite what was done by the addAll method]
         Collections.copy(courses2,course1);
 
         System.out.println("Populate 2nd Array list using copy method\n");
@@ -103,16 +76,19 @@ public class Course {
         }
         System.out.println("\n");
 
+        //Search for where course "Java 101" is located in the array
         int index = Collections.binarySearch(courses2, new Course ("Java 101",0,null),new CourseNameComparator());
         System.out.println("\n The index of 'Java 101' in courses2 is: " + index + "\n");
         
-
+        //disjoint analysis to confirm that there are no similarities between the two course arrays
         boolean arrayDisjoint = Collections.disjoint(course1,courses2);
         System.out.println("Result of disjoint analysis between both arrays is: " + arrayDisjoint);
 
+        //Find course with most students
         Course mostStudents = Collections.max(courses2, new NumberOfStudentsComparator());
         System.out.println("\nThe course with the most students is: \n" + mostStudents);
 
+        //Find course with least students
         Course leastStudents = Collections.min(courses2, new NumberOfStudentsComparator());
         System.out.println("\nThe course with the least students is: \n" + leastStudents);
     }
