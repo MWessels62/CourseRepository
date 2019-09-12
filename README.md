@@ -4,7 +4,7 @@ Hyperion - Section 3 - Task 10 - Holds information on courses - Name, no. of stu
 
 Information on courses available are added to a Course object
 The program then prints out the results of doing all of the following: 
-<ul
+<ul>
   <li>Printing the Course object</li>
   <li>Sorting the list according to the number of students</li>
   <li>Swapping items 1 and 2</li>
@@ -16,7 +16,4 @@ The program then prints out the results of doing all of the following:
   <li>Disjoint analysis to confirm that there are no similarities between the two course arrays</li>
   <li>Find the course with the most students</li>
   <li>Find the course with the least students</li>
-  <li></li>
-  <li></li>
-  <li></li>
 </ul>
