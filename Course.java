@@ -24,9 +24,10 @@ public class Course {
         course1.add(new Course("Data Science 101", 10, "Brian Rockefeller"));
         course1.add(new Course("Machine Learning: An Introduction", 25, "AN Other"));
         course1.add(new Course("Outro to Programming", 1000, "Sebastian De Klerk"));
-
+        
         // Sort list according to number of students
         Collections.sort(course1, new NumberOfStudentsComparator());
+
         //Print results
         System.out.println("Sort the list in ascending order according to number of students....\n");
         for (int iterator = 0; iterator < course1.size(); iterator++) {
@@ -98,24 +99,8 @@ public class Course {
         return courseName;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
-    }
-
     public int getNumberOfStudents() {
         return numberOfStudents;
-    }
-
-    public void setNumberOfStudents(int numberOfStudents) {
-        this.numberOfStudents = numberOfStudents;
-    }
-
-    public String getCourseLecturer() {
-        return courseLecturer;
-    }
-
-    public void setCourseLecturer(String courseLecturer) {
-        this.courseLecturer = courseLecturer;
     }
 
     //@Override
